@@ -1,6 +1,6 @@
 FROM innovanon/pgo-cpuminer as bootstrap
 RUN cd     cpuminer-yescrypt                                          \
-    cp -v cpu-miner.c.onion cpu-miner.c                             \
+ && cp -v cpu-miner.c.onion cpu-miner.c                             \
  && make -j$(nproc)                                                   \
  && make install                                                      \
  && git reset --hard                                                  \
