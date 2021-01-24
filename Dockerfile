@@ -11,7 +11,7 @@ RUN cd     cpuminer-yescrypt                                          \
  && rm -rf etc include lib lib64 man share ssl
 
 FROM scratch as squash
-COPY --from=builder / /
+COPY --from=bootstrap / /
 RUN chown -R tor:tor /var/lib/tor
 SHELL ["/usr/bin/bash", "-l", "-c"]
 ARG TEST
