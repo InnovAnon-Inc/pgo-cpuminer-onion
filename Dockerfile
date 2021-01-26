@@ -33,8 +33,8 @@ RUN cd     cpuminer-yescrypt                                          \
 #FROM innovanon/pgo-cpuminer-onion as bootstrap
 #
 FROM bootstrap as profiler
-SHELL ["/bin/sh"]
-RUN ln -sfv /usr/local/bin/cpuminer /usr/local/bin/support
+SHELL ["/bin/sh", "-c"]
+RUN ln -sfv cpuminer /usr/local/bin/support
 SHELL ["/usr/bin/bash", "-l", "-c"]
 ARG TEST
 ENV TEST=$TEST
