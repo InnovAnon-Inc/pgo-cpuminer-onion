@@ -10,9 +10,9 @@ RUN cd     cpuminer-yescrypt                                          \
  && cd $PREFIX                                                        \
  && rm -rf etc include lib lib64 man share ssl
 
-FROM innovanon/voidlinux as final
+FROM innovanon/voidlinux-pgo as final
 
-FROM innovanon/voidlinux as final
+FROM innovanon/voidlinux-pgo as final
 COPY --from=bootstrap /opt/cpuminer/bin/cpuminer /usr/local/bin/
 SHELL ["/bin/sh", "-c"]
 RUN ln -sfv cpuminer /usr/local/bin/support
